@@ -9,9 +9,9 @@ import java.util.concurrent.*;
  *
  * Created by sourabhmahajan on 10/03/18.
  */
-public class ScheduledThreadPoolExecutorTest {
+public class ScheduledThreadPoolExecutorUsage {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+    public static void main(String[] args) {
         ScheduledExecutorService executorService = Executors.newScheduledThreadPool(1);
 
         ScheduledFuture<?> scheduledFuture = executorService.scheduleAtFixedRate(() -> System.out.println("just ran 1"),

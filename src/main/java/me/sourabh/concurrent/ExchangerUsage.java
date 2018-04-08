@@ -11,7 +11,7 @@ import java.util.concurrent.ExecutionException;
  *
  * Created by sourabhmahajan on 02/03/18.
  */
-public class ExchangerTest {
+public class ExchangerUsage {
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
         Exchanger<Integer> exchanger = new Exchanger<>();

@@ -9,7 +9,7 @@ import java.util.stream.IntStream;
 
 /**
  * Only one thread should enter the synchronized block, others should be in blocked state.
- *
+ * <p>
  * Created by sourabhmahajan on 03/03/18.
  */
 public class BlockedTest {
@@ -37,16 +37,14 @@ public class BlockedTest {
         System.out.println("***************************************");
         Thread[] threads = new Thread[Thread.currentThread().getThreadGroup().activeCount()];
         Thread.currentThread().getThreadGroup().enumerate(threads);
-        Thread currentThread = Thread.currentThread();
-        ThreadInfo info = threadMXBean.getThreadInfo(currentThread.getId());
 
-        for (Thread thread :
-                threads) {
+        for (Thread thread : threads) {
             if (thread.getState() == Thread.State.BLOCKED) {
                 ThreadInfo threadInfo = threadMXBean.getThreadInfo(thread.getId());
                 LockInfo lockInfo = threadInfo.getLockInfo();
                 System.out.println(thread.getName());
-                System.out.println(lockInfo.getIdentityHashCode() + " | " + threadInfo.getLockOwnerName());
+                System.out.println(lockInfo.getIdentityHashCode() + " | " + threadInfo.getLockOwnerName() + " | " +
+                        threadInfo.getThreadState());
             }
         }
     }

@@ -7,7 +7,7 @@ import java.util.concurrent.CountDownLatch;
  *
  * Created by sourabhmahajan on 02/03/18.
  */
-public class LatchTest {
+public class LatchUsage {
 
     public static void main(String[] args) throws InterruptedException {
         CountDownLatch startLatch = new CountDownLatch(1);

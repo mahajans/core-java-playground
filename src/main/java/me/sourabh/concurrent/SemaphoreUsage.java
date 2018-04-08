@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
  *
  * Created by sourabhmahajan on 24/01/18.
  */
-public class SemaphoreTest {
+public class SemaphoreUsage {
 
     private static final int PARALLEL_THREADS = 8;
     private static final int SEMAPHORE_PERMITS = 5;
